@@ -17,4 +17,5 @@ class Edge:
     
     if self.is_vertical(): return float('inf')
     
+    # Fix slope expression here 
     return (self.point_a[1] - self.point_b[1]) / (self.point_a[0] - self.point_b[0])

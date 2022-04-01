@@ -13,7 +13,7 @@ def shade_triangle(img, verts2d, vcolors, shade_t):
     edges = [Edge(np.delete(verts2d, i, axis=0)) for i in range (3)]
 
     # Find ActiveEdgesList for scan line y == ymin
-    ActiveEdgesList = list(filter(lambda edge: edge.ymin == ymin, edges))
+    ActiveEdgesList = list(filter(lambda edge: edge.ymin == ymin and not edge.is_horizontal, edges))
     # Find ActivePoinstList for scan line y == ymin
     ActivePointsList = np.empty((1, 2), dtype='float32')
 
