@@ -1,10 +1,13 @@
 import numpy as np
 
 class Edge:
-  def __init__(self, verts2d):
+  def __init__(self, verts2d, vcolors):
     self.point_a = verts2d[0, :]
     self.point_b = verts2d[1, :]
     self.ymin = min(verts2d[:, 1])
+    self.ymax = max(verts2d[:, 1])
+    # yet to be implemented
+    self.x_of_ymin = 0
     
   def is_horizontal(self):
     return self.point_a[1] == self.point_b[1]
