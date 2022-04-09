@@ -16,11 +16,13 @@ if __name__ == "__main__":
 
     img = render(verts2d, faces, vcolors, depth, 'flat')
     
+    print(img.shape)
+    
     # convert image from BGR to RGB format
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
     # show image using pyplot
-    plt.imshow(img)
+    # plt.imshow(img)
     
     # convert img colors from range [0,1] to range [0,255] before saving
-    # cv2.imwrite('flat_shading.png', img * 255)
+    cv2.imwrite('flat_shading.png', img * 255)
