@@ -6,17 +6,14 @@ class Edge:
     self.point_b = verts2d[1, :]
     self.ymin = min(verts2d[:, 1])
     self.ymax = max(verts2d[:, 1])
-    self.x_of_ymin = verts2d[0, np.argmin(verts2d[:, 1])]
-    
-  def is_horizontal(self):
-    return self.point_a[1] == self.point_b[1]
+    self.x_of_ymin = verts2d[np.argmin(verts2d[:, 1]), 0]
+    self.low_vert_color = vcolors[np.argmin(verts2d[:, 1])]
+    self.high_vert_color = vcolors[np.argmax(verts2d[:, 1])]
     
   def is_vertical(self):
     return self.point_a[0] == self.point_b[0]
   
   def slope(self):
-    if self.is_horizontal(): return 0
-    
     if self.is_vertical(): return float('inf')
     
     return (self.point_a[1] - self.point_b[1]) / (self.point_a[0] - self.point_b[0])

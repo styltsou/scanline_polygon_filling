@@ -16,8 +16,6 @@ if __name__ == "__main__":
 
     img = render(verts2d, faces, vcolors, depth, 'flat')
     
-    print(img.shape)
-    
     # convert image from BGR to RGB format
     # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
