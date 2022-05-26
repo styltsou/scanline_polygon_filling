@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 from render import render
 
 if __name__ == "__main__":
-    data = np.load('hw1.npy', allow_pickle=True)
+    data = np.load('data.npy', allow_pickle=True)
     dict = data.tolist()
     
     # extract arrays from dictionary

@@ -4,8 +4,6 @@ from Edge import Edge
 from interpolate_color import interpolate_color
 
 def shade_triangle(img, verts2d, vcolors, shade_t):
-  Y = img
-  
   ymin = np.min(verts2d[:, 1])
   ymax = np.max(verts2d[:, 1])
   

@@ -4,14 +4,13 @@ import cv2
 from render import render
 
 if __name__ == "__main__":
-    data = np.load('hw1.npy', allow_pickle=True)
-    dict = data.tolist()
+    data = np.load('data.npy', allow_pickle=True).tolist()
     
     # extract arrays from dictionary
-    verts2d = dict['verts2d'].astype(int)
-    faces = dict['faces']
-    vcolors = dict['vcolors']
-    depth = dict['depth']
+    verts2d = data['verts2d'].astype(int)
+    faces = data['faces']
+    vcolors = data['vcolors']
+    depth = data['depth']
 
     img = render(verts2d, faces, vcolors, depth, 'gouraud')
     
