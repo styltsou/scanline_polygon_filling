@@ -4,7 +4,7 @@ import cv2
 from render import render
 
 if __name__ == "__main__":
-    data = np.load('data.npy', allow_pickle=True).tolist()
+    data = np.load('h1.npy', allow_pickle=True).tolist()
     
     # extract arrays from dictionary
     verts2d = data['verts2d'].astype(int)

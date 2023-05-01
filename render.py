@@ -1,7 +1,8 @@
 import numpy as np
 
 import Constants
-from shade_triangle import shade_triangle
+from flats import flats
+from gourauds import gourauds
 
 def render(verts2d, faces, vcolors, depth, shade_t):
     # Initialize image tensor with white background
@@ -13,7 +14,12 @@ def render(verts2d, faces, vcolors, depth, shade_t):
     # sort faces array in descending  order based on faces_depth
     sorted_faces = faces[np.flip(np.argsort(faces_depth))]
     
-    for face in sorted_faces:
-        img = shade_triangle(img, verts2d[face], vcolors[face], shade_t)
+    # choose shader and paint the triangles
+    if shade_t == 'flat':
+        for face in sorted_faces:
+            img = flats(img, verts2d[face], vcolors[face])
+    else :
+        for face in sorted_faces:
+            img = gourauds(img, verts2d[face], vcolors[face])        
 
     return img
